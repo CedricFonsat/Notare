@@ -1,6 +1,6 @@
 // services/audioService.ts
 import * as FileSystem from 'expo-file-system';
-import { supabase } from 'src/supabase';
+import { supabase } from 'src/supabase'
 import { AudioNote } from 'src/types';
 import { decode } from 'base64-arraybuffer';
 

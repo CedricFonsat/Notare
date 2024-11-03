@@ -1,5 +1,3 @@
-import { uploadAudioToSupabase } from './audioService';
+import { uploadAudioToSupabase } from './audioService'
 
-export const services = {
-    uploadAudioToSupabase,
-};
+export { uploadAudioToSupabase }

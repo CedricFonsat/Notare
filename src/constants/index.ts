@@ -9,7 +9,8 @@ export const color = {
     black: '#000000',
     grey: '#1C1C1E',
     border: "#2b2c33",
-    player: "#131823"
+    player: "#131823",
+    backgroundParams: "#1C1C1E"
 }
 
 export const size = {

@@ -4,6 +4,7 @@ import { View, ScrollView, TouchableOpacity, Text, StyleSheet, ActivityIndicator
 import { AudioListItem } from './AudioListItem';
 import { AudioNote } from 'src/types';
 import { useAudioPlayer, useAudioRecorder, useAudioStorage } from 'src/hooks';
+import { color } from 'src/constants';
 
 const AudioRecorderStorage: React.FC = () => {
     const { isRecording, recordingUri, hasPermission, startRecording, stopRecording } = useAudioRecorder();
@@ -96,24 +97,24 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   recordButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: color.white,
     padding: 15,
     borderRadius: 25,
     alignItems: 'center',
     marginBottom: 10,
   },
   recordingButton: {
-    backgroundColor: '#f44336',
+    backgroundColor: color.white,
   },
   saveButton: {
-    backgroundColor: '#2196F3',
+    backgroundColor: color.white,
     padding: 15,
     borderRadius: 25,
     alignItems: 'center',
     marginBottom: 20,
   },
   buttonText: {
-    color: 'white',
+    color: color.black,
     fontSize: 16,
   },
   notesList: {
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   playButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: color.black,
     padding: 10,
     borderRadius: 20,
     marginRight: 10,
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
   titleInput: {
     fontSize: 16,
     padding: 5,
-    backgroundColor: 'white',
+    backgroundColor: color.white,
     borderRadius: 4,
   },
   date: {

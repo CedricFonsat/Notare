@@ -1,16 +1,24 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { color, fonts, size } from 'src/constants'
+import { useGlobal } from 'src/hooks';
 
 type Props = {
     text: string;
 }
 
 const Header = ({ text }: Props) => {
+    const { handleMenu } = useGlobal();
+
   return (
     <View style={styles.container}>
-      <Image source={require('assets/image/logo.png')} style={styles.logo} />
+      <View style={styles.logoContainer}>
+      {/* <Image source={require('assets/image/logo.png')} style={styles.logo} /> */}
       <Text style={styles.title}>{text}</Text>
+      </View>
+      <TouchableOpacity onPress={handleMenu}>
+      <Image source={require('assets/image/menu.png')} style={styles.burger} />
+      </TouchableOpacity>
     </View>
   )
 }
@@ -24,7 +32,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: size.spacing,
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: size.headerSpacing
+        marginTop: size.headerSpacing,
+        justifyContent: 'space-between',
+        marginBottom: size.spacing * 2,
     },
     title: {
         fontSize: size.h2,
@@ -36,5 +46,14 @@ const styles = StyleSheet.create({
     logo: {
         width: size.spacing * 2.5,
         height: size.spacing ,
+    },
+    logoContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    burger: {
+        width: size.spacing * 1.5,
+        height: size.spacing * 1.5,
     }
 })

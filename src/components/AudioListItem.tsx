@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { AudioNote } from 'src/types';
+import { color, size } from 'src/constants';
 
 interface AudioListItemProps {
   note: AudioNote;
@@ -36,7 +37,7 @@ export const AudioListItem: React.FC<AudioListItemProps> = ({
         <MaterialIcons
           name={isPlaying ? "pause" : "play-arrow"}
           size={24}
-          color="white"
+          color={color.black}
         />
       </TouchableOpacity>
 
@@ -66,7 +67,7 @@ export const AudioListItem: React.FC<AudioListItemProps> = ({
         style={styles.deleteButton}
         onPress={onDelete}
       >
-        <MaterialIcons name="delete" size={24} color="#ff4444" />
+        <MaterialIcons name="delete" size={24} color={color.white}/>
       </TouchableOpacity>
     </View>
   );
@@ -78,17 +79,17 @@ const styles = StyleSheet.create({
       padding: 20,
     },
     recordButton: {
-      backgroundColor: '#4CAF50',
+      backgroundColor: color.white,
       padding: 15,
       borderRadius: 25,
       alignItems: 'center',
       marginBottom: 10,
     },
     recordingButton: {
-      backgroundColor: '#f44336',
+      backgroundColor: color.white,
     },
     saveButton: {
-      backgroundColor: '#2196F3',
+      backgroundColor: color.white,
       padding: 15,
       borderRadius: 25,
       alignItems: 'center',
@@ -104,13 +105,14 @@ const styles = StyleSheet.create({
     itemContainer: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: '#f5f5f5',
+      backgroundColor: color.grey,
       padding: 10,
       marginBottom: 10,
       borderRadius: 8,
+      width: size.width - 40,
     },
     playButton: {
-      backgroundColor: '#4CAF50',
+      backgroundColor: color.white,
       padding: 10,
       borderRadius: 20,
       marginRight: 10,
@@ -121,6 +123,7 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 16,
       fontWeight: '500',
+      color: color.white
     },
     titleInput: {
       fontSize: 16,

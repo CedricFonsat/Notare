@@ -1,8 +1,9 @@
 import { supabase } from "src/supabase";
-import { useEffect } from "react";
-
+import { useNavigation } from "@react-navigation/native";
 
 const useGlobal = () => {
+
+    const navigation = useNavigation<any>();
 
     const handleLogout = async () => {
         const { error } = await supabase.auth.signOut();
@@ -11,8 +12,13 @@ const useGlobal = () => {
         }
     };
 
+    const handleMenu = () => {
+        navigation.navigate('Settings');
+    }
+
     return {
         handleLogout,
+        handleMenu
     }
 }
 

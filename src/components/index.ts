@@ -1,6 +1,7 @@
 import Header from './Header';
 import AudioRecorder from './AudioRecorder';
-import { AudioListItem } from './AudioListItem';
 import AudioRecorderStorage from './AudioRecorderStorage';
+import { AudioListItem } from './AudioListItem';
+import Button from './Button';
 
-export { Header, AudioRecorder, AudioListItem, AudioRecorderStorage };
+export { Header, AudioRecorder, AudioListItem, AudioRecorderStorage, Button };

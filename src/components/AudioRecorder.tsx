@@ -1,9 +1,10 @@
 // components/AudioRecorder.tsx
 import React, { useState } from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { uploadAudioToSupabase } from '../services/audioService';
+import { uploadAudioToSupabase } from 'src/services/audioService';
 import { useAudioRecorder } from 'src/hooks';
 import { AudioNote } from 'src/types';
+import { color } from 'src/constants';
 
 interface Props {
   userId: string;
@@ -57,17 +58,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   recordButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: color.white,
     padding: 15,
     borderRadius: 25,
     width: 200,
     alignItems: 'center',
   },
   recordingButton: {
-    backgroundColor: '#f44336',
+    backgroundColor: color.white,
   },
   saveButton: {
-    backgroundColor: '#2196F3',
+    backgroundColor: color.white,
     padding: 15,
     borderRadius: 25,
     width: 200,

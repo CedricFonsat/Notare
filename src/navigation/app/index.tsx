@@ -1,21 +1,21 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { LoginScreen, HomeScreen } from 'src/screens';
-import { useLogin } from 'src/hooks';
+import { LoginScreen, HomeScreen, OnboardingScreen, SettingsScreen, SplashScreen } from 'src/screens';
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
-    const { isLoggedIn } = useLogin();
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {isLoggedIn ? (
+      <Stack.Navigator initialRouteName='Splash' screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={HomeScreen} />
-        ) : (
-          <Stack.Screen name="Login" component={LoginScreen} />
-        )}
+          <Stack.Screen name="Settings" component={SettingsScreen} options={{
+            presentation: 'modal',
+          }}/>
+           <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+           <Stack.Screen name="Login" component={LoginScreen} />   
+           <Stack.Screen name="Splash" component={SplashScreen} />   
       </Stack.Navigator>
     </NavigationContainer>
   );
